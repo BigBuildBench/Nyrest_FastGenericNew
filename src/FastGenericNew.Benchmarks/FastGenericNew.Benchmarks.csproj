@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net8.0;net5.0;net6.0;net9.0</TargetFrameworks>
+		<TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">$(TargetFrameworks);net481</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>10</LangVersion>
+		<NoWarn>$(NoWarn);CA1822</NoWarn>
+		<IsPackable>false</IsPackable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+	</PropertyGroup>
+
+	<!-- FastGenericNew Properties -->
+	<PropertyGroup>
+		<FastNew_MaxParameterCount>16</FastNew_MaxParameterCount>
+		<FastNew_ForceFastNewDelegate>false</FastNew_ForceFastNewDelegate>
+		<FastNew_PrettyOutput>true</FastNew_PrettyOutput>
+		<FastNew_OutputGenerationInfo>true</FastNew_OutputGenerationInfo>
+	</PropertyGroup>
+
+	<!-- Imports -->
+	<Import Project="../FastGenericNew.SourceGenerator/FastGenericNew.SourceGenerator.props" />
+
+</Project>

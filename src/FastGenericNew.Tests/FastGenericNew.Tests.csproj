@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net8.0;net9.0</TargetFrameworks>
+		<TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">$(TargetFrameworks);net48</TargetFrameworks>
+		<LangVersion>10</LangVersion>
+		<Nullable>enable</Nullable>
+		<IsPackable>false</IsPackable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+	</PropertyGroup>
+
+	<!-- Dependencies for TargetFrameworks doesn't compatible to 'NET 5.0' -->
+	<!-- Dependencies for .NET Standard 2.0 -->
+
+	<!-- FastGenericNew Properties -->
+	<PropertyGroup>
+		<FastNew_MaxParameterCount>18</FastNew_MaxParameterCount>
+		<FastNew_MultiThreadedGeneration>true</FastNew_MultiThreadedGeneration>
+		<FastNew_AllowUnsafeImplementation>true</FastNew_AllowUnsafeImplementation>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<DefineConstants Condition=" '$(FastNew_AllowUnsafeImplementation)' == 'true' ">$(DefineConstants);AllowUnsafeImplementation</DefineConstants>
+	</PropertyGroup>
+	<Import Project="../FastGenericNew.SourceGenerator/FastGenericNew.SourceGenerator.props" />
+		
+</Project>
